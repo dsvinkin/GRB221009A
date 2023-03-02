@@ -111,7 +111,9 @@ def main():
 
     lst_instr = """Fermi  Swift  AGILE  SATech-01-HEBS  Insight-HXMT-HE GECAM-B
         INTEGRAL-SPI-ACS L2_SRG-ARTXC  Wind-Konus 
-        Mars-Odyssey-HEND  BepiColombo-MGNS  Solar-Orbiter-STIX Voyager_1 """.split()
+        Mars-Odyssey-HEND  BepiColombo-MGNS  Solar-Orbiter-STIX Voyager_1 Voyager_2
+        IceCube  LHAASO Carpet-3 Baikal-GVD KM3NeT
+     """.split()
 
     dic_pos = {
         'Fermi':             SC('20221009 47819.988 298.61316  -4.57939  6910.4'),
@@ -126,7 +128,13 @@ def main():
         'Mars-Odyssey-HEND': SC('20221009 47819.988  81.7184  22.8347 1.099847e+08'),
         'BepiColombo-MGNS':  SC('20221009 47819.988 219.4658 -19.0687 1.358263e+08'),
         'Solar-Orbiter-STIX':SC('20221009 47819.988 203.5964 -10.8673 1.842560e+08'),
-        'Voyager_1':         SC('20221009 47819.988 258.28835 12.13962  2.3659203499E+10')
+        'Voyager_1':         SC('20221009 47819.988 258.28835 12.13962  2.3659203499E+10'),
+        'Voyager_2':         SC('20221008 35774.758 301.43064 -58.89899  1.9658309639E+10'),
+        'IceCube':   SC('20221009 47819.988 180.757 -89.875 6357.6'), 
+        'LHAASO' :   SC('20221009 47819.988 317.286  29.104 6377.4'),
+        'Carpet-3':  SC('20221009 47819.988 259.883  43.248 6368.1'),
+        'Baikal-GVD':SC('20221009 47819.988 325.363  53.272 6364.3'),
+        'KM3NeT':    SC('20221009 47819.988 233.273  36.160 6367.2'),
     } 
 
     pos_Earth_center = SC('20221009 47819.988 0.0 0.0 0.0')

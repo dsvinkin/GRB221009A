@@ -119,10 +119,10 @@ dic_sc = {
 
 lst_instr = """Fermi Swift AGILE Astrosat GECAM-B  SATech-01-HEBS  Insight-HXMT 
     INTEGRAL Spektr-RG  Wind 
-    Mars-Odyssey  BepiColombo  Solar-Orbiter Voyager-1""".split()
+    Mars-Odyssey  BepiColombo  Solar-Orbiter Voyager-1 Voyager-2""".split()
 
 lst_instr_distant = """INTEGRAL  Spektr-RG  Wind  Mars-Odyssey  
-    BepiColombo  Solar-Orbiter  Voyager-1""".split()
+    BepiColombo  Solar-Orbiter  Voyager-1 Voyager-2""".split()
 
 dic_pos = {
     'Fermi':         '20221009 47819.988 298.61316  -4.57939  6910.4',
@@ -138,8 +138,18 @@ dic_pos = {
     'Mars-Odyssey':  '20221009 47819.988  81.7184   22.8347   1.099847e+08',
     'BepiColombo':   '20221009 47819.988 219.4658  -19.0687   1.358263e+08',
     'Solar-Orbiter': '20221009 47819.988 203.5964  -10.8673   1.842560e+08',
-    'Voyager-1':     '20221009 47819.988 258.28835  12.13962  2.3659203499E+10'
+    'Voyager-1':     '20221009 47819.988 258.28835  12.13962  2.3659203499E+10',
+    'Voyager-2':     '20221008 35774.758 301.43064 -58.89899  1.9658309639E+10',
 } 
+
+# RA, Dec for 2022-10-09T13:17:00
+dic_ground_instr = {
+    'IceCube':   [180.757,-89.875, 6357.6/1000], 
+    'LHAASO' :   [317.286, 29.104, 6377.4/1000],
+    'Carpet-3':  [259.883, 43.248, 6368.1/1000],
+    'Baikal-GVD':[325.363, 53.272, 6364.3/1000],
+    'KM3NeT':    [233.273, 36.160, 6367.2/1000],
+}
 
 dic_sc = {}
 for instr in lst_instr:
@@ -155,7 +165,14 @@ for name in dic_sc.keys():
         continue
 
     x,y,z = eq_to_cart(dic_sc[name])
-    ax.scatter([x], [y], [z], color="g", s=50)
+    ax.scatter([x], [y], [z], color="b", s=50)
+    ax.annotate3D(name, (x, y, z), xytext=(3, 3), textcoords='offset points')
+
+# plot ground instruments
+for name in dic_ground_instr.keys():
+
+    x,y,z = eq_to_cart(dic_ground_instr[name])
+    ax.scatter([x], [y], [z], color="r", s=50)
     ax.annotate3D(name, (x, y, z), xytext=(3, 3), textcoords='offset points')
 
 # plot distant SC

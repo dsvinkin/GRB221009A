@@ -19,6 +19,12 @@ Mars-Odyssey/HEND  |     236.482
 BepiColombo/MGNS   |     -95.662     
 Solar-Orbiter/STIX |     -13.587     
 Voyager-1          |  -68507.501     
+Voyager-2          |  -12044.342
+IceCube            |       0.007
+LHAASO             |      -0.019
+Carpet-3           |      -0.018
+Baikal-GVD         |      -0.015
+KM3NeT             |      -0.013
 
 Script for producin 3d plot: plot_sc.py
 ![Example plot](IPN_plot.png)
